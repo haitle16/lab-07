@@ -35,6 +35,32 @@ describe('web server', () => {
       }).catch(console.error);
 
   });
+  it('should respond properly on post request to categories', () => {
 
+      return mockRequest
+          .post('/api/v1/categories')
+          .then(results => {
+              expect(results.status).toBe(404);
+          }).catch(console.error);
+
+  });
+  it('should respond properly on request put request to categories', () => {
+
+      return mockRequest
+          .put('/api/v1/categories/11')
+          .then(results => {
+              expect(results.status).toBe(404);
+          }).catch(console.error);
+
+  });
+  it('should respond properly on request delete request to categories', () => {
+
+      return mockRequest
+          .delete('/categories/12')
+          .then(results => {
+              expect(results.status).toBe(404);
+          }).catch(console.error);
+
+  })
 
 });
